@@ -47,6 +47,7 @@
   .meme-generator {
     text-align: center;
     margin: 2rem;
+    color: 'white';
   }
   
   .image-upload {
@@ -88,4 +89,28 @@
     cursor: pointer;
   }
   
+  
+  .image-upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    border: 6px dashed #ccc;
+    background-color: #7e7878;
+  }
+  
+  .image-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-upload-border {
+    border: 9px dashed #aaa;
+    background-color: rgb(156, 143, 143);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Adjust these styles to your preference */
   

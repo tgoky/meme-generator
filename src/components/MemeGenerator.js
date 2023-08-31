@@ -14,10 +14,14 @@ const ImageUpload = ({ onImageUpload }) => {
   });
 
   return (
-    <div className="image-upload" {...getRootProps()}>
-      <input {...getInputProps()} />
-      <p>Drag & drop an image here, or click to select one</p>
+    <div className="image-upload-container" {...getRootProps()}>
+    <div className="image-upload">
+      <div className="image-upload-border">
+        <input {...getInputProps()} />
+        <p>Drag & drop an image here, or click to select one</p>
+      </div>
     </div>
+  </div>
   );
 };
 
