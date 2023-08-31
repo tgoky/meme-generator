@@ -4,6 +4,7 @@ import { useDropzone } from 'react-dropzone';
 import { createCanvas } from 'canvas';
 import './Iris.css';
 
+
 const ImageUpload = ({ onImageUpload }) => {
   const { getRootProps, getInputProps } = useDropzone({
     accept: 'image/*',
@@ -14,17 +15,33 @@ const ImageUpload = ({ onImageUpload }) => {
     },
   });
 
+  const handleOpenPhotoLibrary = () => {
+    // Trigger the file input element to open the photo library
+    inputElement.click();
+  };
+
+  let inputElement; // Reference to the input element
+
   return (
-    <div className="image-upload-container" {...getRootProps()}>
-    <div className="image-upload">
-      <div className="image-upload-border">
-        <input {...getInputProps()} />
-        <p>Drag & drop an image here, or click to select one</p>
+    <div className="image-upload-container">
+      <div className="image-upload">
+        <div className="image-upload-border">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={(event) => onImageUpload(event.target.files[0])}
+            style={{ display: 'none' }}
+            ref={(input) => (inputElement = input)}
+          />
+          <div onClick={handleOpenPhotoLibrary}>
+            <p>Drag & drop an image here, or click to select one</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
   );
 };
+
 
 const TextInput = ({ label, value, onChange }) => {
   return (
