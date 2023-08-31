@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import MemeGenerator from './components/MemeGenerator';
 

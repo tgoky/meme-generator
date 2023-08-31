@@ -39,7 +39,7 @@ const MemeGenerator = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [topText, setTopText] = useState('');
   const [bottomText, setBottomText] = useState('');
-  const canvasRef = useRef(null);
+  
 
   const handleImageUpload = (image) => {
     setSelectedImage(image);
