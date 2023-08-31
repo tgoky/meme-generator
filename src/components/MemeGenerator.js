@@ -23,10 +23,10 @@ const ImageUpload = ({ onImageUpload }) => {
   let inputElement; // Reference to the input element
 
   return (
-    <div className="image-upload-container">
+    <div className="image-upload-container" {...getRootProps()}>
       <div className="image-upload">
         <div className="image-upload-border">
-          <input
+          <input {...getInputProps()}
             type="file"
             accept="image/*"
             onChange={(event) => onImageUpload(event.target.files[0])}
