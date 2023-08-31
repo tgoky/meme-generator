@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { createCanvas } from 'canvas';
@@ -90,16 +91,17 @@ const MemeGenerator = () => {
 
   return (
     <div className="meme-generator">
-      <h1>Meme Generator</h1>
+      <h1 style={{color: 'white'}}>$GLIZZY OVERDRIVE</h1>
       <ImageUpload onImageUpload={handleImageUpload} />
       <TextInput label="Top Text" value={topText} onChange={setTopText} />
       <TextInput label="Bottom Text" value={bottomText} onChange={setBottomText} />
       <button onClick={handleGenerateMeme}>Generate Meme</button>
       <div className="meme-preview">
-        <img id="meme-preview" alt="Meme Preview" />
+        <img id="meme-preview" alt="Meme Preview" style={{ width: 600, height: 480,}}/>
       </div>
     </div>
   );
 };
 
 export default MemeGenerator;
+

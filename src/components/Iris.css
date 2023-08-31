@@ -64,6 +64,13 @@
     width: 100%;
   }
   
+  .meme-preview img {
+    position: relative;
+    max-width: 100%;
+    top: -620px; /* Adjust this value to move the image up */
+
+  }
+  
   .top-text,
   .bottom-text {
     position: absolute;
