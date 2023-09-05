@@ -1,7 +1,10 @@
+
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { createCanvas } from 'canvas';
 import './Iris.css';
+import hotdogImage from '../overlays/hotdog.png';
+
 
 const ImageUpload = ({ onImageUpload }) => {
   const { getRootProps, getInputProps } = useDropzone({
@@ -25,6 +28,51 @@ const ImageUpload = ({ onImageUpload }) => {
   );
 };
 
+const OverlayImageUpload = ({ onOverlayImageUpload }) => {
+  const [uploadedImages, setUploadedImages] = useState([hotdogImage]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const handleImageSelection = (index) => {
+    setCurrentImageIndex(index);
+    // Pass the selected image to the parent component
+    onOverlayImageUpload(uploadedImages[index]);
+  };
+
+  const handlePreloadedImageSelect = () => {
+    // Select the preloaded hotdogImage
+    setCurrentImageIndex(0);
+    onOverlayImageUpload(hotdogImage);
+  };
+
+  return (
+    <div className="overlay-image-upload-container">
+      <div className="overlay-image-upload">
+        <button onClick={handlePreloadedImageSelect}>Select Preloaded Image</button>
+        {uploadedImages.length > 0 && (
+          <div className="image-history">
+            <p>Uploaded Images:</p>
+            <ul>
+              {uploadedImages.map((image, index) => (
+                <li
+                  key={index}
+                  onClick={() => handleImageSelection(index)}
+                  className={index === currentImageIndex ? 'selected' : ''}
+                >
+                  {index === currentImageIndex ? 'Selected: ' : ''}
+                  {image.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+
+
+
 const TextInput = ({ label, value, onChange }) => {
   return (
     <div className="text-input">
@@ -38,11 +86,15 @@ const MemeGenerator = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [topText, setTopText] = useState('');
   const [bottomText, setBottomText] = useState('');
-  
+
 
   const handleImageUpload = (image) => {
     setSelectedImage(image);
   };
+
+
+
+  
   const handleGenerateMeme = () => {
     if (selectedImage) {
       const canvas = createCanvas(selectedImage.width, selectedImage.height);
@@ -85,13 +137,16 @@ const MemeGenerator = () => {
       };
     }
   };
+
   
   
 
   return (
     <div className="meme-generator">
-      <h1 style={{color: 'white'}}>$GLIZZY OVERDRIVE</h1>
+      {/* ... Other components ... */}
+      <h1 style={{color: 'white'}}>GLIZZY OVERDRIVE</h1>
       <ImageUpload onImageUpload={handleImageUpload} />
+      <OverlayImageUpload/>
       <TextInput label="Top Text" value={topText} onChange={setTopText} />
       <TextInput label="Bottom Text" value={bottomText} onChange={setBottomText} />
       <button onClick={handleGenerateMeme}>Generate Meme</button>
@@ -103,4 +158,5 @@ const MemeGenerator = () => {
 };
 
 export default MemeGenerator;
+
 
