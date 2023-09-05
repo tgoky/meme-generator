@@ -3,7 +3,10 @@ import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { createCanvas } from 'canvas';
 import './Iris.css';
-import hotdogImage from '../overlays/hotdog.png';
+
+import overlayImage1 from '../overlays/hotdog.png';
+import overlayImage2 from '../overlays/hotdog2.png';
+import overlayImage3 from '../overlays/hotdog3.png';
 
 
 const ImageUpload = ({ onImageUpload }) => {
@@ -28,51 +31,6 @@ const ImageUpload = ({ onImageUpload }) => {
   );
 };
 
-const OverlayImageUpload = ({ onOverlayImageUpload }) => {
-  const [uploadedImages, setUploadedImages] = useState([hotdogImage]);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const handleImageSelection = (index) => {
-    setCurrentImageIndex(index);
-    // Pass the selected image to the parent component
-    onOverlayImageUpload(uploadedImages[index]);
-  };
-
-  const handlePreloadedImageSelect = () => {
-    // Select the preloaded hotdogImage
-    setCurrentImageIndex(0);
-    onOverlayImageUpload(hotdogImage);
-  };
-
-  return (
-    <div className="overlay-image-upload-container">
-      <div className="overlay-image-upload">
-        <button onClick={handlePreloadedImageSelect}>Select Preloaded Image</button>
-        {uploadedImages.length > 0 && (
-          <div className="image-history">
-            <p>Uploaded Images:</p>
-            <ul>
-              {uploadedImages.map((image, index) => (
-                <li
-                  key={index}
-                  onClick={() => handleImageSelection(index)}
-                  className={index === currentImageIndex ? 'selected' : ''}
-                >
-                  {index === currentImageIndex ? 'Selected: ' : ''}
-                  {image.name}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
-
-
-
-
 const TextInput = ({ label, value, onChange }) => {
   return (
     <div className="text-input">
@@ -86,13 +44,16 @@ const MemeGenerator = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [topText, setTopText] = useState('');
   const [bottomText, setBottomText] = useState('');
-
+  const overlayImages = [overlayImage1, overlayImage2, overlayImage3];
 
   const handleImageUpload = (image) => {
     setSelectedImage(image);
   };
 
-
+  const handleOverlayImageDrop = (event, overlayIndex) => {
+    event.preventDefault();
+    // Handle the drop of overlay image at the specified index
+  };
 
   
   const handleGenerateMeme = () => {
@@ -138,15 +99,46 @@ const MemeGenerator = () => {
     }
   };
 
+  const handleGenerateMemeWithOverlay = () => {
+    if (selectedImage) {
+      const canvas = createCanvas(selectedImage.width, selectedImage.height);
+      const ctx = canvas.getContext('2d');
+
+      // Load uploaded base image
+      const baseImage = new Image();
+      baseImage.src = URL.createObjectURL(selectedImage);
+
+      baseImage.onload = () => {
+        // Apply overlay images on canvas
+        // Apply text and generate meme
+      };
+    }
+  };
   
   
 
   return (
     <div className="meme-generator">
+       <div className="overlay-images">
+        {overlayImages.map((overlayImage, index) => (
+          <img
+            key={index}
+            src={overlayImage}
+            width="80px"
+            height="80px"
+            alt={`Overlay ${index}`}
+            draggable="true"
+            onDragStart={(event) => event.dataTransfer.setData('text/plain', index)}
+          />
+        ))}
+      </div>
       {/* ... Other components ... */}
-      <h1 style={{color: 'white'}}>GLIZZY OVERDRIVE</h1>
+      <button onClick={handleGenerateMemeWithOverlay}>Generate Meme with Overlay</button>
+      <div className="meme-preview">
+        {/* Display combined meme image with overlay */}
+      </div>
+      <h1 style={{color: 'white'}}>$GLIZZY OVERDRIVE</h1>
       <ImageUpload onImageUpload={handleImageUpload} />
-      <OverlayImageUpload/>
       <TextInput label="Top Text" value={topText} onChange={setTopText} />
       <TextInput label="Bottom Text" value={bottomText} onChange={setBottomText} />
       <button onClick={handleGenerateMeme}>Generate Meme</button>
