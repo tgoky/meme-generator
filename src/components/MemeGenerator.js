@@ -18,9 +18,7 @@ const ImageUpload = ({ onImageUpload }) => {
       }
     },
   });
-  //good
-  //great
-  //bravo
+  
 
   return (
     <div className="image-upload-container" {...getRootProps()}>
