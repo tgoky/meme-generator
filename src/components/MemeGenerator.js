@@ -19,6 +19,7 @@ const ImageUpload = ({ onImageUpload }) => {
     },
   });
   //good
+  //great
 
   return (
     <div className="image-upload-container" {...getRootProps()}>
