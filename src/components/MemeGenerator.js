@@ -23,6 +23,7 @@ const ImageUpload = ({ onImageUpload }) => {
   //fje
   //reup
   //refo
+  //fro
 
   return (
     <div className="image-upload-container" {...getRootProps()}>
