@@ -25,6 +25,7 @@ const ImageUpload = ({ onImageUpload }) => {
   //initialize
   //delete
   //add
+  //view
   return (
     <div className="image-upload-container" {...getRootProps()}>
     <div className="image-upload">
