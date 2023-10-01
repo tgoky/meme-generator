@@ -20,12 +20,7 @@ const ImageUpload = ({ onImageUpload }) => {
   });
  
 
-  //clean up
-  // roll up
-  //initialize
-  //delete
-  //add
-  //view
+//rebase
   return (
     <div className="image-upload-container" {...getRootProps()}>
     <div className="image-upload">
