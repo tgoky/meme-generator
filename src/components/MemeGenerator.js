@@ -21,6 +21,7 @@ const ImageUpload = ({ onImageUpload }) => {
  
 
   //clean up
+  // roll up
   return (
     <div className="image-upload-container" {...getRootProps()}>
     <div className="image-upload">
