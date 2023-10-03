@@ -21,6 +21,7 @@ const ImageUpload = ({ onImageUpload }) => {
  
 
 //rebase
+// bola
   return (
     <div className="image-upload-container" {...getRootProps()}>
     <div className="image-upload">
