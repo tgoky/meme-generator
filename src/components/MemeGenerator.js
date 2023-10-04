@@ -21,7 +21,7 @@ const ImageUpload = ({ onImageUpload }) => {
  
 
 //rebase
-// bola
+// goodvibes
   return (
     <div className="image-upload-container" {...getRootProps()}>
     <div className="image-upload">
