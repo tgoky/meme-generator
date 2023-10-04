@@ -20,10 +20,7 @@ const ImageUpload = ({ onImageUpload }) => {
   });
  
 
-//rebase
-// goodvibes
-//applicable
-//read
+
 //write
   return (
     <div className="image-upload-container" {...getRootProps()}>
