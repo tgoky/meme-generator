@@ -28,6 +28,7 @@ const ImageUpload = ({ onImageUpload }) => {
 //organize
 //distribute
 //structure
+//usual
   return (
     <div className="image-upload-container" {...getRootProps()}>
     <div className="image-upload">
