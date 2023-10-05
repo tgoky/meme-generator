@@ -27,6 +27,7 @@ const ImageUpload = ({ onImageUpload }) => {
 //szns
 //organize
 //distribute
+//structure
   return (
     <div className="image-upload-container" {...getRootProps()}>
     <div className="image-upload">
