@@ -24,6 +24,7 @@ const ImageUpload = ({ onImageUpload }) => {
 //faith
 //caution
 //structure
+//structs
   return (
     <div className="image-upload-container" {...getRootProps()}>
     <div className="image-upload">
