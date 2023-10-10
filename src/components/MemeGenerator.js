@@ -22,6 +22,7 @@ const ImageUpload = ({ onImageUpload }) => {
 
 //elite
 //faith
+//caution
   return (
     <div className="image-upload-container" {...getRootProps()}>
     <div className="image-upload">
