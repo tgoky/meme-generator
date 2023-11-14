@@ -12,8 +12,7 @@ import Accessories5 from '../components/Accessory5';
 import './Iris.css';
 
 import hotDog from '../overlays/hotdog.png';
-import  hotDog1 from '../overlays/hotdog2.png';
-import hotDog2 from '../overlays/hotdog3.png';
+
 
 const ImageUpload = ({ onImageUpload }) => {
   const { getRootProps, getInputProps } = useDropzone({
@@ -60,10 +59,7 @@ const MemeGenerator = () => {
     setSelectedImage(image);
   };
 
-  const handleOverlayImageDrop = (event, overlayIndex) => {
-    event.preventDefault();
-    // Handle the drop of overlay image at the specified index
-  };
+  
 
   const handleGenerateMeme = () => {
     if (selectedImage) {
@@ -108,21 +104,7 @@ const MemeGenerator = () => {
     }
   };
 
-  const handleGenerateMemeWithOverlay = () => {
-    if (selectedImage) {
-      const canvas = createCanvas(selectedImage.width, selectedImage.height);
-      const ctx = canvas.getContext('2d');
-
-      // Load uploaded base image
-      const baseImage = new Image();
-      baseImage.src = URL.createObjectURL(selectedImage);
-
-      baseImage.onload = () => {
-        // Apply overlay images on canvas
-        // Apply text and generate meme
-      };
-    }
-  };
+  
 
   return (
     <div className="meme-generator">
