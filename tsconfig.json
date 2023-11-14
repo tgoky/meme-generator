@@ -1,0 +1,12 @@
+// tsconfig.json
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "esnext",
+      "jsx": "react",
+      "moduleResolution": "node",
+      "strict": true
+      // Other options as needed
+    }
+  }
+  
