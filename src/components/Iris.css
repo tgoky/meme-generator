@@ -1,149 +1,159 @@
+
 .App {
-    text-align: center;
-  }
-  
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    height: 40vmin;
-    pointer-events: none;
+    animation: App-logo-spin infinite 20s linear;
   }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
-  
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .App-link {
-    color: #61dafb;
-  }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .meme-generator {
-    text-align: center;
-    margin: 2rem;
-    color: 'white';
-  }
-  
-  .image-upload {
-    margin-bottom: 1rem;
-  }
-  
-  .text-input {
-    margin-bottom: 1rem;
-  }
-  
-  .meme-preview {
-    position: relative;
-    margin-top: 1rem;
-    width: 100%;
-  }
-  
-  .meme-preview img {
-    position: relative;
-    max-width: 100%;
-    top: -620px; /* Adjust this value to move the image up */
+}
 
-  }
-  
-  .top-text,
-  .bottom-text {
-    position: absolute;
-    color: white;
-    font-size: 1.5rem;
-    text-align: center;
-    width: 100%;
-  }
-  
-  .top-text {
-    top: 0;
-  }
-  
-  .bottom-text {
-    bottom: 0;
-  }
-  
-  button {
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  
-  .image-upload-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-    border: 6px dashed #ccc;
-    background-color: #7e7878;
-  }
-  
-  .image-upload {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .image-upload-border {
-    border: 9px dashed #aaa;
-    background-color: rgb(156, 143, 143);
-    padding: 20px;
-    text-align: center;
-  }
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
 
-  .card {
-    background: var(--bg-colour);
-    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
+.App-link {
+  color: #61dafb;
+}
 
-  .card img {
-    max-width: 100px; /* Adjust the maximum width as needed */
-    max-height: 100px; /* Adjust the maximum height as needed */
-    /* Add any other styles you want */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-  .card__info {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    padding: 1em 1em 2em;
-  }
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.meme-generator {
+  text-align: center;
+  margin: 2rem;
+  color: 'white';
+}
+
+.image-upload {
+  margin-bottom: 1rem;
+}
+
+.text-input {
+  margin-bottom: 1rem;
+}
+
+.meme-preview {
+  position: relative;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.meme-preview img {
+  position: relative;
+  max-width: 100%;
+  top: -620px; /* Adjust this value to move the image up */
+
+}
+
+.top-text,
+.bottom-text {
+  position: absolute;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.top-text {
+  top: 0;
+}
+
+.bottom-text {
+  bottom: 0;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+.image-upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  border: 6px dashed #ccc;
+  background-color: #7e7878;
+
+}
+
+.image-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
-  .card__info-title {
-    font-weight: 700;
-    font-size: 1.5rem;
-    font-family: 'Libre Baskerville', serif;
-  }
-  
-  /* Adjust these styles to your preference */
-  
+}
+
+.image-cutter {
+  border: 6px dashed #ccc;
+  width: 600px;
+  height: 500px;
+}
+
+.image-upload-border {
+  border: 9px dashed #aaa;
+  background-color: rgb(156, 143, 143);
+  padding: 20px;
+  text-align: center;
+}
+
+.card {
+  background: var(--bg-colour);
+  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.card img {
+  max-width: 100px; /* Adjust the maximum width as needed */
+  max-height: 100px; /* Adjust the maximum height as needed */
+  /* Add any other styles you want */
+}
+
+.card__info {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 1em 1em 2em;
+}
+
+.card__info-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-family: 'Libre Baskerville', serif;
+}
+
+/* Adjust these styles to your preference */

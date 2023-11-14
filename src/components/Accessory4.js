@@ -6,8 +6,8 @@ import hotDog from '../overlays/hotdog.png'
 import hotDog1 from '../overlays/hotdog2.png';
 import hotDog2 from '../overlays/hotdog3.png';
 
-const Accessories = ({ image }) => {
-  const [accessoryPosition, setAccessoryPosition] = useState({ x:50, y: 100 });
+const Accessories4 = ({ image }) => {
+  const [accessoryPosition, setAccessoryPosition] = useState({ x: 50, y: 350 });
   const [isDragging, setIsDragging] = useState(false);
   const [initialClick, setInitialClick] = useState({ x: 0, y: 0 });
 
@@ -49,7 +49,7 @@ const Accessories = ({ image }) => {
     >
       {/* Use your eyeglasses image here */}
       <img src={hotDog} alt="Eyeglasses" style={accessoryStyle} />
-
+    
     </div>
   );
 };
@@ -57,8 +57,7 @@ const Accessories = ({ image }) => {
 const accessoryStyle = {
   width: '100px', // Adjust the size according to your image
   height: 'auto',
-
+ 
 };
 
-export default Accessories;
-
+export default Accessories4;

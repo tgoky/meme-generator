@@ -1,12 +1,12 @@
 import './App.css';
-import ProfilePictureEditor from './components/MemeGenerator';
+import MemeGenerator from './components/MemeGenerator';
 
 
 function App() {
   return (
 
 
-    <ProfilePictureEditor />
+    <MemeGenerator />
 
 
   );
