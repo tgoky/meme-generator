@@ -3,8 +3,7 @@
 
 import React, { useState } from 'react';
 import hotDog from '../overlays/hotdog.png'
-import hotDog1 from '../overlays/hotdog2.png';
-import hotDog2 from '../overlays/hotdog3.png';
+
 
 const Accessories5 = ({ image }) => {
   const [accessoryPosition, setAccessoryPosition] = useState({ x: 160, y: 360 });
